@@ -1,13 +1,352 @@
-body {
+
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  
+}
+body {
+  
+  overflow-x: hidden;
+  font-family: 'Josefin Sans', sans-serif;
+  transition: background-color 0.5s ease;
+
+}
+.body-dark {
+  background-color: hsl(235, 21%, 11%);
+}
+.body-light {
+  background-color: hsl(0, 0%, 98%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+main {
+  /* width: 100%;
+  height: 100%;
+  background-image: url('/public/images/bg-desktop-dark.jpg'); */
+  position: relative;
+}
+section {
+  width: 410px;
+
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 30%;
+}
+.title-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.input-div {
+ 
+  position: relative; 
+  display: flex; 
+  transition: background-color 0.5s ease;
+}
+.divdark {
+   background-color: hsl(235, 24%, 19%);
+}
+
+.divlight {
+  background-color: hsl(0, 0%, 98%); 
+}
+.listinput {
+  
+  border: none;
+  padding: 1rem;
+  padding-left: 0px;
+  transition: background-color 0.5s ease;
+}
+
+.inputdark {
+  background-color: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
+}
+.inputlight {
+  background-color: hsl(0, 0%, 98%); 
+  color: hsl(236, 9%, 61%);
+}
+.listinput:focus {
+  border: none;
+  outline: none;
+}
+label {
+display: flex;
+width: 60px;
+height: 60px;
+justify-content: center;
+align-items: center;
+position: relative;
+cursor: pointer;
+
+}
+label input {
+  opacity: 0;
+  z-index: 15;
+}
+
+
+
+label span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  
+  /* background-color: aqua; */
+  /* background: rgb(87,221,255);
+background: linear-gradient(153deg, rgba(87,221,255,1) 11%, rgba(192,88,243,1) 58%); */
+border: 1px solid hsl(234, 11%, 52%);
+  
+}
+label input:checked ~ span  {
+  background: rgb(87,221,255);
+background: linear-gradient(153deg, rgba(87,221,255,1) 11%, rgba(192,88,243,1) 58%);
+}
+label img  {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  cursor: pointer;
+}
+
+
+label input:checked ~  img {
+  display: flex;
+}
+
+
+.title {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: white;
+}
+.todolist-outer-div {
+  
+  margin-top: 1rem;
+  padding: 0.5rem;
+  -webkit-box-shadow: 0px 2px 4px #484b6a;
+  -moz-box-shadow: 0px 2px 4px #484b6a;
+  box-shadow: 0px 2px 4px #484b6a;
+  transition: background-color 0.5s ease;
+}
+bg-dark {
+  transition: all 0.5s ease;
+}
+.outer-divdark {
+  background-color: hsl(237, 14%, 26%);
+}
+.outer-divlight {
+  background-color: hsl(0, 0%, 98%); 
+  -webkit-box-shadow: 0px 2px 9px #9394a5;
+  -moz-box-shadow: 0px 2px 9px #9394a5;
+  box-shadow: 0px 2px 9px #9394a5;
+}
+
+a {
+  text-decoration: none;
+}
+.todolist-controls {
+  display: flex;
+  font-size: 12px;
+  justify-content: space-between;
+}
+.btn {
+  color: hsl(233, 14%, 35%);
+}
+.btn:hover {
+  color: hsl(236, 33%, 92%);
+}
+.active {
+  color:  hsl(220, 98%, 61%);
+}
+.main-controls span {
+  display: inline-block;
+  margin-right: 5px;
+  
+}
+.todolist-controls {
+  padding-top: 1rem;
+}
+.items-remaining {
+color: hsl(233, 14%, 35%);
+}
+.btn .action {
+  color: hsl(235, 21%, 11%);
+}
+.linkday:hover {
+  color: white;
+}
+
+.label {
+display: flex;
+width: 60px;
+height: 60px;
+justify-content: center;
+align-items: center;
+position: relative;
+cursor: pointer;
+
+}
+.label input {
+  opacity: 0;
+  z-index: 15;
+}
+
+
+
+.label span {
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* background-color: aqua; */
+  /* background: rgb(87,221,255);
+background: linear-gradient(153deg, rgba(87,221,255,1) 11%, rgba(192,88,243,1) 58%); */
+border: 1px solid hsl(234, 11%, 52%);
+  
+}
+.label input:checked ~ span  {
+  background: rgb(87,221,255);
+background: linear-gradient(153deg, rgba(87,221,255,1) 11%, rgba(192,88,243,1) 58%);
+}
+.label img  {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  cursor: pointer;
+}
+
+
+.label input:checked ~  img {
+  display: flex;
+}
+.todolist-inner-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+
+}
+/* .todolist-inner-div {
+  visibility: hidden;
+} */
+.crossline {
+  text-decoration: line-through;
+  font-size: 12px;
+}
+
+.list-textdark {
+  color: hsl(236, 33%, 92%);
+}
+.list-textwhite {
+  color: hsl(236, 9%, 61%);
+}
+
+
+
+
+.todolist-inner-div {
+  position: relative;
+}
+
+.todolist-inner-div .cancel {
+  
+  visibility: hidden;
+}
+
+.todolist-inner-div:hover .cancel {
+  visibility: visible;
+}
+
+/* .todolist-inner-div .cancel {
+  
+  visibility: hidden;
+} */
+
+.label:hover span {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  border-image: linear-gradient(153deg, rgba(87,221,255,1) 11%, rgba(192,88,243,1) 58%);
+  border-image-slice: 1;
+  
+}
+.bgmobile-dark {
+  display: none;
+}
+.attribution {
+  font-size: 11px; text-align: center;
+
+position: relative;
+top: 5rem;
+margin: 0 auto;
+
+}
+.attribution a 
+{ color: hsl(228, 45%, 44%); }
+@media (max-width: 500px) {
+  .bg-dark {
+    display: none;
+  }
+  .bgmobile-dark {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: 100%;
+  }
+section {
+  width: 290px;
+  top: 10%;
+}
+.todolist-controls {
+  position: relative;
+}
+.main-controls {
+  position: absolute;
+  top: 240%;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.main-controls {
+  padding: 1rem 0.1rem 1rem 0.1rem;
+  transition: background-color 0.5s ease;
+
+}
+.attribution {
+  top: 6.5rem;
+}
+
+.controlsdark {
+  -webkit-box-shadow: 0px 2px 4px #484b6a;
+  -moz-box-shadow: 0px 2px 4px #484b6a;
+  box-shadow: 0px 2px 4px #484b6a;
+background-color: hsl(237, 14%, 26%);
+}
+.controlslight {
+  background-color: hsl(0, 0%, 98%); 
+  -webkit-box-shadow: 0px 2px 9px #9394a5;
+  -moz-box-shadow: 0px 2px 9px #9394a5;
+  box-shadow: 0px 2px 9px #9394a5;
+}
+
+/* .main-controls span {
+  display: inline-flex;
+  al
+}  */
+
+
+
+
 }
